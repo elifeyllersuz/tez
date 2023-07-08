@@ -20,7 +20,7 @@ const validationSchema = yup.object().shape({
         .string()
         // .label("Email")
         .email("Lütfen geçerli bir e-mail adresi giriniz.")
-        .required(),
+        .required("Lütfen geçerli bir e-mail adresi giriniz."),
     password: yup
         .string()
         .required("Şifre boş bırakılamaz.")
@@ -118,9 +118,9 @@ const LoginPage = ({ navigation }) => {
                                     paddingRight: 25,
                                     // marginBottom:1
                                 }}>
-                                    <TouchableOpacity onPress={handleForgotPassword}>
+                                    {/* <TouchableOpacity onPress={handleForgotPassword}>
                                         <Text style={{ color: '#8f9195' }}>Şifremi Unuttum</Text>
-                                    </TouchableOpacity>
+                                    </TouchableOpacity> */}
                                 </View>
 
 
@@ -134,16 +134,16 @@ const LoginPage = ({ navigation }) => {
 
 
             </View>
-            <View style={styles.footer_container} >
+            {/* <View style={styles.footer_container} >
                 <SocialChoice image={require('../../../assets/images/google_logo.png')} />
                 <SocialChoice image={require('../../../assets/images/facebook_logo.png')} />
 
-            </View>
+            </View> */}
 
             <View style={styles.signup_container}>
                 <Text>Hesabın yok mu?</Text>
                 <TouchableOpacity onPress={handleSignUp}>
-                    <Text style={styles.signup_text}> Kaydol</Text>
+                    <Text style={styles.signup_text}> Kayıt Ol</Text>
                 </TouchableOpacity>
             </View>
 

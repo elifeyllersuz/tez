@@ -157,11 +157,11 @@ const SignPage = ({ navigation }) => {
 
 
             </View>
-            <View style={styles.footer_container} >
+            {/* <View style={styles.footer_container} >
                 <SocialChoice image={require('../../../assets/images/google_logo.png')} />
                 <SocialChoice image={require('../../../assets/images/facebook_logo.png')} />
 
-            </View>
+            </View> */}
             <View style={styles.signup_container}>
                 <Text>Hesabın var mı?</Text>
                 <TouchableOpacity onPress={handleLogin}>

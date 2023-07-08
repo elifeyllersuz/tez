@@ -2,6 +2,7 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
     container: {
+        flex:1,
         borderWidth: 1,
        // borderBottomColor: '#FCF9BE',
         borderColor: 'white',
@@ -21,6 +22,7 @@ export default StyleSheet.create({
         shadowOpacity: 0.4,
         shadowRadius: 3,
          elevation: 15,
+       
         //shadowColor: '#00acee'
     },
     priceContainer: {
@@ -36,6 +38,7 @@ export default StyleSheet.create({
     inner_container: {
         flex: 1,
         alignItems: 'flex-end',
+       // backgroundColor:'red'
 
 
 
@@ -62,7 +65,8 @@ export default StyleSheet.create({
         fontSize: 18,
         fontWeight: 'bold',
         marginBottom: 5,
-         color:'#68B984'
+         color:'#68B984',
+         //backgroundColor:'red'
        // color: '#2B3A55'
     },
     dateText: {
@@ -70,5 +74,10 @@ export default StyleSheet.create({
          color:'#68B984',
         fontWeight: 'bold',
        // color: '#ffb74d'
+    },
+    description : {
+        fontSize: 18,
+        fontWeight: 'bold',
+        
     }
 })

@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "223451642018",
-    "project_id": "tezproject-aa7eb",
-    "storage_bucket": "tezproject-aa7eb.appspot.com"
+    "project_number": "902801273333",
+    "project_id": "tezdeneme-a32c6",
+    "storage_bucket": "tezdeneme-a32c6.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:223451642018:android:5cf8c52091a7c4ad74bffb",
+        "mobilesdk_app_id": "1:902801273333:android:b48e5e5dec72e7e44d70bc",
         "android_client_info": {
           "package_name": "com.tezprojesi"
         }
       },
       "oauth_client": [
         {
-          "client_id": "223451642018-cpu991jqls2t6agu024f9fnaense1g26.apps.googleusercontent.com",
+          "client_id": "902801273333-ghcq3a2q5mftjh1gd17mp3lddkj6l8jc.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBMsk_4AySOTZa7EVvZp-A_xxx3KWh5WOo"
+          "current_key": "AIzaSyCdtkINEutWbCTT2Mpe-AdEjd-1sZN57Es"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "223451642018-cpu991jqls2t6agu024f9fnaense1g26.apps.googleusercontent.com",
+              "client_id": "902801273333-ghcq3a2q5mftjh1gd17mp3lddkj6l8jc.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

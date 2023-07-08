@@ -15,8 +15,10 @@ import List from './pages/List/List';
 import Animation from './pages/auth/Animation';
 import LoginPage from './pages/auth/LoginPage/LoginPage';
 import SignPage from './pages/auth/SignPage/SignPage';
+import AddBill from './pages/AddBill/AddBill';
 import auth from '@react-native-firebase/auth'
 import ForgotPassword from './pages/auth/ForgotPassword';
+import Detail from './pages/Detail/Detail';
 
 // import SignIn from './pages/auth/SignIn/SignIn';
 // import SignLogin from './pages/auth/SignLogin.js/SignLogin';
@@ -28,7 +30,7 @@ const Tab = createBottomTabNavigator();
 
 
 const App = () => {
-    
+
 
     const [userSession, setUserSession] = React.useState();
 
@@ -43,7 +45,8 @@ const App = () => {
         return (
             <Stack.Navigator screenOptions={{ headerShown: false }}>
                 <Stack.Screen name='OnboardingScreen' component={OnboardingScreen} />
-                <Stack.Screen name='AnimationScreen' component={Animation} />
+                <Stack.Screen name='LoginScreen' component={LoginPage} />
+                <Stack.Screen name='SignScreen' component={SignPage} />
             </Stack.Navigator>
         )
 
@@ -53,61 +56,98 @@ const App = () => {
             <Stack.Navigator screenOptions={{ headerShown: false }}>
                 <Stack.Screen name='LoginScreen' component={LoginPage} />
                 <Stack.Screen name='SignScreen' component={SignPage} />
-                
+
             </Stack.Navigator>
 
         )
     }
+    const ListStack = () => {
+        return (
+            <Stack.Navigator screenOptions={{ headerShown: false }}>
+                <Stack.Screen name='ListScreen' component={List}/>
+                <Stack.Screen name='Detail' component={Detail} />
 
-    const HomeStackScreen = () => {
+            </Stack.Navigator>
+        )
+    }
+
+    const HomeStackScreen = ({ navigation }) => {
         return (
             <Tab.Navigator
                 initialRouteName='Feed' screenOptions={{
                     //headerShown: false,
                     tabBarInactiveTintColor: 'white',
                     tabBarActiveTintColor: '#68B984',
-                    
-                   tabBarStyle:{
-                    backgroundColor:'white'
-                   }
+
+                    tabBarStyle: {
+                        backgroundColor: 'white'
+                    }
                 }}
             >
                 <Tab.Screen name='FeedScreen' component={Feed}
                     options={{
-                        title: 'Anasayfa',
+                        title: 'Harcamalar',
                         headerTintColor: '#68B984',
-                        headerRight: () => (
+                        // headerRight: () => (
 
-                            <Icon name='add-circle-outline'
-                                size={30}
-                                color='#68B984'
-                            />
+                        //     <Icon name='add-circle-outline'
+                        //         size={30}
+                        //         color='#68B984'
+                        //        onPress={() => navigation.navigate('AddBill')}
+                        //     />
 
-                        ),
-
-
-                        tabBarIcon: () => (
-                            <Icon name='home'
-                                size={30}
-                               color='#d9d9d8'
+                        // ),
+                        tabBarIcon: ({ focused, color }) => (
+                            <Icon
+                                focused={focused}
+                                name="home"
+                                color={color}
+                                size={28}
                             />
                         )
-                    }} />
-                <Tab.Screen name='ListScreen' component={List}
-                    options={{
-                        title: 'Eksikler',
-                        headerTintColor: '#68B984',
 
-                        tabBarIcon: () => (
-                            <Icon name='list-alt'
-                                size={30}
-                                color='#d9d9d8'
-                            />
-                        )
-                    }} />
+
+                    }} 
+
+                    //     tabBarIcon: () => (
+                    //         <Icon name='home'
+                    //             size={30}
+                    //             color='#d9d9d8'
+                    //         />
+                    //     )
+                    // }}
+                     />
+               
+                    <Tab.Screen name='ListStack' component={ListStack}
+                        options={{
+                            title: 'İhtiyaçlar',
+                            headerTintColor: '#68B984',
+
+                            tabBarIcon: ({ focused, color }) => (
+                                <Icon
+                                    focused={focused}
+                                    name="list-alt"
+                                    color={color}
+                                    size={25}
+                                />
+                            )
+    
+    
+                        }} 
+
+                        //     tabBarIcon: () => (
+                        //         <Icon name='list-alt'
+                        //             size={30}
+                        //             color='#d9d9d8'
+                        //         />
+                        //     )
+                        // }} 
+                        
+                        />
+                
                 <Tab.Screen name='ProfileScreen' component={Profile}
                     options={{
-                        title: 'Profil',
+                        title: 'Yemekler',
                         headerTintColor: '#68B984',
                         headerRight: () => (
                             <Icon name='logout'
@@ -115,16 +155,29 @@ const App = () => {
                                 color='#68B984'
                                 onPress={() => auth().signOut()} />
                         ),
-                        tabBarIcon: () => (
-                            
-                            <Icon name='account-circle'
-                                size={30}
-                                color='#d9d9d8'
-                             
+
+                        tabBarIcon: ({ focused, color }) => (
+                            <Icon
+                                focused={focused}
+                                name="account-circle"
+                                color={color}
+                                size={25}
                             />
-                        ),
-                        
-                    }} />
+                        )
+    
+    
+                    }} 
+                    //     tabBarIcon: () => (
+
+                    //         <Icon name='account-circle'
+                    //             size={30}
+                    //             color='#d9d9d8'
+
+                    //         />
+                    //     ),
+
+                    // }} 
+                    />
             </Tab.Navigator>
         )
     }
@@ -136,13 +189,21 @@ const App = () => {
                 {userSession ? (
                     <>
                         <Stack.Screen name='HomeStackScreen' component={HomeStackScreen} />
+                        <Stack.Screen name='AddBill' component={AddBill} />
+
+                      
+
 
                     </>
                 ) : (
                     <>
                         <Stack.Screen name='WelcomeStack' component={WelcomeStack} />
                         <Stack.Screen name='AuthStack' component={AuthStack} />
-                        <Stack.Screen name='ForgotPassword' component={ForgotPassword}/>
+
+                        <Stack.Screen name='ForgotPassword' component={ForgotPassword} />
+
+
+
 
                     </>
                 )}

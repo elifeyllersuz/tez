@@ -2,28 +2,36 @@ import React from 'react'
 import { View, Text, TouchableOpacity, TouchableWithoutFeedback } from 'react-native';
 import styles from './CardStyle';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import { formatDistance, parseISO } from 'date-fns';
+import { tr } from 'date-fns/locale';
 
-const Card = ({ name, price, date }) => {
+const Card = ({ expense }) => {
+    const formattedDate = formatDistance(parseISO(expense.date), new Date(),
+    {
+        addSuffix: true,
+        locale: tr
+    })
     return (
-        <TouchableWithoutFeedback>
+       
             <View style={styles.container}>
                 <View style={styles.priceContainer}>
-                    <Text style={styles.priceText}>{price} TL</Text>
+                    <Text style={styles.priceText}>{expense.text} TL</Text>
                 </View>
                 <View style={styles.inner_container}>
                     <View style={styles.info_container}>
-                        <Text style={styles.nameText}>{name}</Text>
-                        <Text style={styles.dateText}>{date}</Text>
+                        <Text style={styles.nameText}>{expense.username}</Text>
+                        <Text style={styles.description}>{expense.description}</Text>
+                        <Text style={styles.dateText}>{formattedDate}</Text>
                     </View>
                 </View>
                 <View>
-                 <Icon name='chevron-right' size={30} color='#68B984' />
+                
                 </View>
 
 
             </View>
 
-        </TouchableWithoutFeedback>
+        
     )
 }
 

@@ -11,8 +11,8 @@ const OnboardingScreen = ({ navigation }) => {
             // onSkip={() => navigation.navigate("LoginScreen")}
             // onDone={() => navigation.navigate("LoginScreen")}
 
-            onSkip={() => navigation.navigate("AnimationScreen")}
-            onDone={() => navigation.navigate("AnimationScreen")}
+            onSkip={() => navigation.navigate("LoginScreen")}
+            onDone={() => navigation.navigate("LoginScreen")}
 
             // onSkip={() => navigation.navigate("SignInScreen")}
             // onDone={() => navigation.navigate("SignInScreen")}
@@ -23,21 +23,21 @@ const OnboardingScreen = ({ navigation }) => {
                 {
                     backgroundColor: '#bdd9ff',
                     image: <Image source={require('../../assets/images/check_list.png')} />,
-                    title: 'Eksikleri Not Al ',
-                    subtitle: 'Eksikleri Not Al ve Güncelle',
+                    title: 'Eksikleri Not Al',
+                    subtitle: 'Nelere ihtiyaç varsa notlar kısmına yaz.',
                 },
 
                 {
                     backgroundColor: '#b3e59f',
                     image: <Image source={require('../../assets/images/calc_receipt.png')} />,
-                    title: 'Hesap Yapmakla Uğraşma',
-                    subtitle: 'Tutarları Gir Borçlar Hesaplansın',
+                    title: 'Harcamalarının Tutarını Gir',
+                    subtitle: 'Kimin ne harcama yaptığını gör.',
                 },
                 {
                     backgroundColor: '#fff',
-                    image: <Image source={require('../../assets/images/connect.png')} />,
+                    image: <Image style={{width:170, height:170}} source={require('../../assets/images/food.jpg')} />,
                     title: 'Evdekilerle Bağlantıda Kal',
-                    subtitle: 'Evdekilerle Kolayca İletişim Kur',
+                    subtitle: 'Yemek fikirlerini paylaş.',
                 },
             ]}
         />
